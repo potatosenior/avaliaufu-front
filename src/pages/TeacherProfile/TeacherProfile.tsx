@@ -43,7 +43,12 @@ function TeacherProfile() {
   return teacher ? (
     <div className="teacherProfile">
       <div className="teacherProfileContainer">
-        <img src={TeacherImg} alt="Foto do professor" />
+        <img
+          src={
+            teacher.profilePicture ? `${teacher.profilePicture}` : TeacherImg
+          }
+          alt="Foto do professor"
+        />
 
         <div>
           <h3>{teacher.name}</h3>

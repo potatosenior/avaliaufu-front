@@ -2,6 +2,7 @@ export interface ITeacher {
   id: string
   name: string
   department: string
+  profilePicture: string
   rating: {
     total: number
     average: number
@@ -24,6 +25,7 @@ export class Teacher {
   public readonly id: string
   public readonly name: string
   public readonly department: string
+  public readonly profilePicture: string
   public readonly rating: {
     total: number
     average: number
@@ -36,5 +38,6 @@ export class Teacher {
     this.department = data.department
     this.rating = data.rating
     this.reviews = data.reviews
+    this.profilePicture = data.profilePicture
   }
 }

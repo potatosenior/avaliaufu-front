@@ -17,7 +17,10 @@ function TeacherCard({ data }: TeacherCardProps) {
       to={TEACHER_PATH.replace(':id', data.id)}
       className="teacherCardContainer"
     >
-      <img src={TeacherImg} alt="Foto do professor" />
+      <img
+        src={data.profilePicture ? `${data.profilePicture}` : TeacherImg}
+        alt="Foto do professor"
+      />
 
       <h4>{data.name}</h4>
       <h5>{data.department}</h5>
