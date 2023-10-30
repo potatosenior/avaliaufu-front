@@ -27,10 +27,10 @@ function NavBar() {
         {!isAuthenticated && (
           <>
             <li>
-              <Link to={LOGIN_PATH}>Login</Link>
+              <p>Login</p>
             </li>
             <li>
-              <Link to={REGISTER_PATH}>Register</Link>
+              <p>Register</p>
             </li>
           </>
         )}
