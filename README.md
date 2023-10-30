@@ -88,6 +88,7 @@ npm run build
 ```
 
 ### Lints and fixes files
+
 ```bash
 # show errors
 yarn lint
@@ -136,7 +137,7 @@ The app is integrated with the [node-api-refresh-token.cyclic.app](https://node-
 
 ### Client
 
-- **Email**: client@site.com
+- **Email**: joaopedrovieira@ufu.br
 - **Password**: password@123
 - **Permissions**: `metrics.list`
 
@@ -156,10 +157,7 @@ const SampleComponent = () => <div>Sample component</div>
 
 export const Router = () => (
   <Routes>
-    <PublicRoute
-      path="/login"
-      component={SampleComponent}
-    />
+    <PublicRoute path="/login" component={SampleComponent} />
   </Routes>
 )
 ```
@@ -212,7 +210,7 @@ Use the `CanAccess` component and pass `permissions` props to control the visibi
 ```tsx
 import { CanAccess } from 'src/components'
 
-export function NavBar () {
+export function NavBar() {
   return (
     <>
       {/*
@@ -243,6 +241,6 @@ See also the list of [contributors](https://github.com/ederssouza/reactjs-auth-b
 
 This project is licensed under the MIT License - see the [LICENSE.md](LICENSE.md) file for details
 
-----
+---
 
 Develop by Eder Sampaio 👋 &nbsp;[See my linkedin](https://www.linkedin.com/in/ederssouza).

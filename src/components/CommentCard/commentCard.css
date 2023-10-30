@@ -1,0 +1,25 @@
+.commentCard {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  border: 1px dotted #222222;
+  border-radius: 5%;
+  padding: 20px;
+  margin-bottom: 20px;
+
+
+  color: black;
+
+  > h4 {
+    font-weight: 600;
+  }
+
+  @media (max-width: 600px) {
+    padding: 10px;
+    font-size: 0.8em;
+
+    > img {
+      width: 80px;
+    }
+  }
+}

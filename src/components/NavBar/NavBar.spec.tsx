@@ -17,7 +17,7 @@ const providerUserLoggedMock = {
   signIn: jest.fn(),
   signOut: jest.fn(),
   user: {
-    email: 'email@site.com',
+    email: 'joaopedrovieira@ufu.br',
     permissions: ['users.list', 'metrics.list'],
     roles: []
   },

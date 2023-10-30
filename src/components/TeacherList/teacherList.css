@@ -1,0 +1,16 @@
+.teacherList {
+  padding: 10px;
+}
+
+.teachersListContainer {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-evenly;
+  margin-top: 50px;
+  width: 100%;
+
+  @media (max-width: 600px) {
+    margin-top: 20px;
+    justify-content: space-evenly;
+  }
+}

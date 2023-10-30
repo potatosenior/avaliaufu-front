@@ -1,0 +1,51 @@
+.teacherProfile {
+    display: flex;
+    flex-direction: column;
+
+    > form {
+        align-self: center;
+        margin: 20px;
+
+        > textarea {
+            padding: 10px;
+            border-radius: 5px;
+            margin: 10px 0px;
+            color: white;
+            outline: none;
+        }
+
+        > button {
+            margin-top: 10px;
+            border: 1px solid #222222;
+            padding: 10px;
+            border-radius: 20px;
+        }
+    }
+}
+
+.teacherProfileContainer {
+  display: flex;
+  flex-direction: row;
+  align-items: flex-start;
+  justify-content: center;
+  height: 100%;
+  padding: 50px 50px 0 50px;
+
+  > img {
+    width: 100%;
+    max-width: 150px;
+    border-radius: 10%;
+    margin-bottom: 20px;
+    margin-right: 50px;
+  }
+
+  > h3 {
+    font-weight: 500;
+  }
+
+  @media (max-width: 600px) {
+    > img {
+      width: 100px;
+    }
+  }
+}

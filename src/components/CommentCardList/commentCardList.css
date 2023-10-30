@@ -1,0 +1,16 @@
+.commentCardList {
+  padding: 10px;
+}
+
+.commentCardListContainer {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  margin-top: 50px;
+  width: 100%;
+
+  @media (max-width: 600px) {
+    justify-content: space-evenly;
+    margin-top: 20px;
+  }
+}

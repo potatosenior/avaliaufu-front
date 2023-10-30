@@ -2,6 +2,7 @@ import { BrowserRouter } from 'react-router-dom'
 import { NavBar } from './components'
 import { AuthProvider } from './providers'
 import { Router } from './router'
+import { TeacherList } from './components/TeacherList'
 
 function App() {
   return (
@@ -9,6 +10,7 @@ function App() {
       <AuthProvider>
         <NavBar />
         <Router />
+        <TeacherList />
       </AuthProvider>
     </BrowserRouter>
   )

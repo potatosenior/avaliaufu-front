@@ -1,44 +1,45 @@
 import { useRoutePaths, useSession } from '@/hooks'
 import { Link } from 'react-router-dom'
-import { CanAccess } from '../CanAccess'
+
+import './navBar.css'
 
 function NavBar() {
   const { isAuthenticated, user, signOut } = useSession()
-  const { LOGIN_PATH, METRICS_PATH, REGISTER_PATH, ROOT_PATH, USERS_PATH } =
-    useRoutePaths()
+  const { LOGIN_PATH, REGISTER_PATH, ROOT_PATH } = useRoutePaths()
 
   return (
-    <div>
+    <div className="navBarContainer">
+      <h1>
+        <Link to={ROOT_PATH}>FACOM DA DEPRESSÃO</Link>
+      </h1>
+
       <ul>
         <li>
-          <Link to={LOGIN_PATH}>Login</Link>
-        </li>
-        <li>
-          <Link to={REGISTER_PATH}>Register</Link>
+          {isAuthenticated && (
+            <>
+              Entrou como <span className="navBarUserEmail">{user?.email}</span>
+            </>
+          )}
         </li>
         <li>
           <Link to={ROOT_PATH}>Home</Link>
         </li>
-
-        <CanAccess permissions={['users.list']}>
+        {!isAuthenticated && (
+          <>
+            <li>
+              <Link to={LOGIN_PATH}>Login</Link>
+            </li>
+            <li>
+              <Link to={REGISTER_PATH}>Register</Link>
+            </li>
+          </>
+        )}
+        {isAuthenticated && (
           <li>
-            <Link to={USERS_PATH}>Users</Link>
+            <button onClick={signOut}>Logout</button>
           </li>
-        </CanAccess>
-
-        <CanAccess permissions={['metrics.list']}>
-          <li>
-            <Link to={METRICS_PATH}>Metrics</Link>
-          </li>
-        </CanAccess>
+        )}
       </ul>
-
-      {isAuthenticated && (
-        <>
-          <span style={{ marginRight: 4 }}>{user?.email}</span>
-          <button onClick={signOut}>Logout</button>
-        </>
-      )}
     </div>
   )
 }

@@ -22,7 +22,7 @@ function SampleComponent() {
       <button
         onClick={() =>
           signIn({
-            email: 'email@site.com',
+            email: 'joaopedrovieira@ufu.br',
             password: 'password'
           })
         }

@@ -3,6 +3,7 @@ import { useRoutePaths } from '@/hooks'
 import { Home, Login, Metrics, Register, Users } from '@/pages'
 import { PrivateRoute } from '../PrivateRoute'
 import { PublicRoute } from '../PublicRoute'
+import { TeacherProfile } from '../../pages/TeacherProfile'
 
 function Router() {
   const {
@@ -11,19 +12,13 @@ function Router() {
     REGISTER_PATH,
     ROOT_PATH,
     USERS_PATH,
-    USER_PATH
+    USER_PATH,
+    TEACHER_PATH
   } = useRoutePaths()
 
   return (
     <Routes>
-      <Route
-        path={ROOT_PATH}
-        element={
-          <PrivateRoute redirectTo={LOGIN_PATH}>
-            <Home />
-          </PrivateRoute>
-        }
-      />
+      <Route path={ROOT_PATH} element={<Home />} />
 
       <Route
         path={LOGIN_PATH}
@@ -34,7 +29,16 @@ function Router() {
         }
       />
 
-      <Route path={REGISTER_PATH} element={<Register />} />
+      <Route
+        path={REGISTER_PATH}
+        element={
+          <PublicRoute>
+            <Register />
+          </PublicRoute>
+        }
+      />
+
+      <Route path={TEACHER_PATH} element={<TeacherProfile />} />
 
       <Route
         path={METRICS_PATH}

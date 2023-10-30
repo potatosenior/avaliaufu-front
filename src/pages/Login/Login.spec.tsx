@@ -30,14 +30,16 @@ describe('Login page component', () => {
       fireEvent.change(select, {
         target: {
           value:
-            '{"name":"Client","email":"client@site.com","password":"password@123"}'
+            '{"name":"Client","email":"joaopedrovieira@ufu.br","password":"password@123"}'
         }
       })
 
-      fireEvent.change(inputEmail, { target: { value: 'client@site.com' } })
+      fireEvent.change(inputEmail, {
+        target: { value: 'joaopedrovieira@ufu.br' }
+      })
       fireEvent.change(inputPassword, { target: { value: 'password@123' } })
 
-      expect(inputEmail.value).toEqual('client@site.com')
+      expect(inputEmail.value).toEqual('joaopedrovieira@ufu.br')
       expect(inputPassword.value).toEqual('password@123')
     })
   })
@@ -49,10 +51,12 @@ describe('Login page component', () => {
         /password/i
       ) as HTMLInputElement
 
-      fireEvent.change(inputEmail, { target: { value: 'email@site.com' } })
+      fireEvent.change(inputEmail, {
+        target: { value: 'joaopedrovieira@ufu.br' }
+      })
       fireEvent.change(inputPassword, { target: { value: 'pass@123' } })
 
-      expect(inputEmail.value).toEqual('email@site.com')
+      expect(inputEmail.value).toEqual('joaopedrovieira@ufu.br')
       expect(inputPassword.value).toEqual('pass@123')
     })
   })

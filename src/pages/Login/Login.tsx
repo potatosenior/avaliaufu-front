@@ -15,7 +15,11 @@ function Login() {
 
   const users = [
     { name: 'Admin', email: 'admin@site.com', password: 'password@123' },
-    { name: 'Client', email: 'client@site.com', password: 'password@123' }
+    {
+      name: 'Client',
+      email: 'joaopedrovieira@ufu.br',
+      password: 'password@123'
+    }
   ]
 
   function handleUserChange(event: React.ChangeEvent<HTMLSelectElement>) {
